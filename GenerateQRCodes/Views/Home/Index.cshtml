@@ -1,0 +1,65 @@
+﻿@model GenerateQRCodes.Models.QRCodeModel
+@{
+    ViewData["Title"] = "Generate your QRCode";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-group col-lg-5">
+            <form style=" margin-top: 50px;" asp-action="Index" asp-controller="Home" method="post">
+                <input asp-for="InputString" type="text" class="form-control" id="TextInput" aria-describedby="TextInput" placeholder="Enter text here">
+                <button type="submit" style="background-color: #CDC1FF; margin-top: 10px; margin-left: 70%;" class="btn"> Generate QRCode </button>
+
+                <br />
+                @if (@ViewBag.Warning != null)
+                 {
+                    <span style="color: #A31621">@ViewBag.Warning</span>
+                 }
+
+                @if (@ViewBag.QrCodeOutput != null)
+                 {
+                    <img src="@ViewBag.QrCodeOutput" class="img-thumbnail" style="height: 300px; width: 300px;" />
+                 }
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+        <div style="background-color: " class="col-lg-6">
+            <div class="">
+                
+                <div class="card" style="border-radius: 50px; background-color: #623CEA">
+                    <div style="" class="card-body">
+                        <div class="">
+                            <br />
+                            <img src="/images/qr_code.png" height="150px; width: 150px;" alt="" />
+                            <img style="float:right" src="/images/qr-code.png" height="150px; width: 150px;" alt="" />
+                        </div>
+                        <br />
+                        <h3 class="card-title" style="color: #E5D9F2; font-weight: bold; text-align: center;"><u>Why QR Codes ?</u></h3>
+                        <p class="card-text">
+                            "QR" stands for "Quick Response", which refers to the instant access to the information hidden in the Code. Initially targeted field for QR Code use was the manufacturing industry, with the rise of smartphone use and the fact that it remained without a patent meant it became an open-source technology, available to anyone and everyone.
+
+                            You can now find QR Codes stylishly delivering great amounts of information and redefining the print to digital marketing scene.
+                            <br />
+                            Common uses of QR Codes :
+                            <br />
+                            - App download boost
+                            <br />
+                            - Scan to win promos
+                            <br />
+                            - Get more followers
+                            <br />
+                            - Scan for feedback
+                            <br />
+                            - Amplifying Events
+                            <br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+
+
+
+</div>
